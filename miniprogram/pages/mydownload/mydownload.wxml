@@ -1,0 +1,21 @@
+<!--pages/mydownload/mydownload.wxml-->
+<van-dialog id="van-dialog" />
+<van-datetime-picker
+  type="date"
+  value="{{ currentDate }}"
+  bind:input="onInput"
+  confirm-button-text=""
+  cancel-button-text=""
+  max-date="{{ maxDate }}"
+  formatter="{{ formatter }}"
+/>
+
+<view style="padding:0px 50rpx;">
+  <van-button type="primary" plain block class="dBtn" bindtap="myconfirm">确定</van-button>
+  <van-button type="primary" plain block class="dBtn" bindtap="mydownloadall">获取下载地址</van-button>
+</view>
+<van-tabbar active="{{ active }}" bind:change="onTabbarChange">
+  <van-tabbar-item name="home" icon="home-o">主页</van-tabbar-item>
+  <van-tabbar-item name="download" icon="down">下载</van-tabbar-item>
+</van-tabbar>
+

@@ -1,0 +1,40 @@
+<!--pages/detail/detail.wxml-->
+<view class="values">
+  <van-cell-group>
+    <van-field
+      label="姓名"  
+      value="{{name}}"
+      placeholder="请输入用户名"
+      border="{{ false }}"
+      bind:change="onNameChange"
+    />
+    <van-field
+      label="手机号"
+      value="{{phone}}"
+      placeholder="请输入手机号"
+      border="{{ false }}"
+      bind:change="onPhoneChange"
+    />
+    <van-field
+      label="邮寄地址"
+      value="{{address}}"
+      placeholder="请输入邮寄地址"
+      autosize
+      border="{{ false }}"
+      type="textarea"
+      bind:change="onAddressChange"
+    />
+    <van-field
+      label="箱数"
+      value="{{number}}"
+      placeholder="请输入邮寄多少箱"
+      border="{{ false }}"
+      bind:change="onNumberChange"
+    />
+  </van-cell-group>
+</view>
+
+<view style="padding:0px 50rpx;">
+<van-button type="primary" plain block class="dBtn" bindtap="update">修改</van-button>
+<van-button type="danger" plain block class="dBtn" bindtap="delete">删除</van-button>
+</view>

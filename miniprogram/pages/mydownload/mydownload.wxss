@@ -1,0 +1,4 @@
+/* pages/mydownload/mydownload.wxss */
+.dBtn{
+  margin: 10px;
+}

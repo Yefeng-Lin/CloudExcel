@@ -1,0 +1,33 @@
+<van-cell-group>
+  <van-field
+    value="{{ value }}"
+    placeholder="请按照 姓名+手机号+地址+箱数 的格式输入"
+    border="{{ false }}"
+    clearable
+    required
+    bind:change="onValueChange"
+  />
+</van-cell-group>
+
+<view style="padding:0px 50rpx;">
+    <van-button icon="add-o" type="primary" block plain class="dBtn" bindtap="add"/>
+</view>
+
+
+<view wx:for="{{values}}">
+  <navigator url="../detail/detail?id={{item._id}}">
+  <van-cell-group>
+    <van-cell title="姓名" value="{{item.name}}" />
+    <van-cell title="手机号" value="{{item.phone}}" />
+    <van-cell title="邮寄地址" value="{{item.address}}" />
+    <van-cell title="箱数" value="{{item.number}}" />
+    <van-cell title="创建时间" value="{{item.createTime}}" />
+  </van-cell-group>
+  <van-divider dashed />
+  </navigator>
+</view>
+
+<van-tabbar active="{{ active }}" bind:change="onTabbarChange">
+  <van-tabbar-item name="home" icon="home-o">主页</van-tabbar-item>
+  <van-tabbar-item name="download" icon="down">下载</van-tabbar-item>
+</van-tabbar>
